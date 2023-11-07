@@ -1,0 +1,11 @@
+{
+  "name": "linkedlist",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^1.0.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
