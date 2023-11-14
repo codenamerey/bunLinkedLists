@@ -94,5 +94,26 @@ export const LinkedList = function() {
         }
     }
 
-    return { append, prepend, getHead, getSize, getTail, at, pop, contains, find };
+    const toString = () => {
+        let currentNode = head;
+        let nodeValues = [];
+        while(currentNode != null) {
+            nodeValues.push(currentNode.value);
+            currentNode = currentNode.next!;
+        }
+
+        let output = '';
+
+        nodeValues.forEach((value, index) => {
+            if(index != nodeValues.length - 1) {
+                output += `( ${value} ) -> `;
+            } else {
+                output += `( ${value} )`;
+            }
+        })
+
+        return output
+    }
+
+    return { append, prepend, getHead, getSize, getTail, at, pop, contains, find, toString };
 }
