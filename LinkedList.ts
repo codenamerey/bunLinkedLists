@@ -25,6 +25,16 @@ export const LinkedList = function() {
         head.next = pastHead;
     }
 
-    return { append, prepend, getHead }
+    const getSize = () => {
+        let nodesNumber = 0;
+        let currentNode = head;
+        nodesNumber++
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+            nodesNumber++;
+        }
+        return nodesNumber;
+    }
 
+    return { append, prepend, getHead, getSize }
 }
