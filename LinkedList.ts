@@ -61,5 +61,18 @@ export const LinkedList = function() {
         currentNode.next = nodeToReplace!.next;
     }
 
-    return { append, prepend, getHead, getSize, getTail, at, pop };
+    const contains = (value: string) => {
+        let currentNode = head;
+
+        do {
+            if(currentNode.value == value) {
+                return true
+            }
+            currentNode = currentNode.next!
+        } while (currentNode.next != null);
+
+        return false;
+    }
+
+    return { append, prepend, getHead, getSize, getTail, at, pop, contains };
 }
