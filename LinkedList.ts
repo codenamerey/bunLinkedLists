@@ -1,15 +1,15 @@
 import { Node } from "./Node";
 
 export const LinkedList = function() {
-    const HEAD = Node(null, null);
+    let head = Node(null, null);
 
     const getHead = () => {
-        return HEAD;
+        return head;
     }
 
     const append = (value: string) => {
 
-        let currentNode: Node = HEAD;
+        let currentNode: Node = head;
 
         while(currentNode.next != null) {
             currentNode = currentNode.next
@@ -18,6 +18,13 @@ export const LinkedList = function() {
         currentNode.next = Node(value, null); 
     }
 
-    return { append, getHead }
+    const prepend = (value: string) => {
+        const pastHead = head;
+        let newHead = Node(value, null);
+        head = newHead;
+        head.next = pastHead;
+    }
+
+    return { append, prepend, getHead }
 
 }

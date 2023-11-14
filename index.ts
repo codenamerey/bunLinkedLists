@@ -1,7 +1,7 @@
 import { LinkedList } from "./LinkedList";
 
 const linkedList = LinkedList();
-linkedList.append("Hello world");
+linkedList.prepend("Hello, world!");
 let head = linkedList.getHead();
-console.log(head.next!.value); // Hello, world!
+console.log(head.value); // Hello, world!
 
