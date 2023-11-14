@@ -52,5 +52,14 @@ export const LinkedList = function() {
         return currentNode
     }
 
-    return { append, prepend, getHead, getSize, getTail, at };
+    const pop = (index : number) => {
+        let currentNode : Node = head;
+        for(let i = 0; i < index - 1; i++) {
+            currentNode = currentNode.next!;
+        }
+        let nodeToReplace = currentNode.next;
+        currentNode.next = nodeToReplace!.next;
+    }
+
+    return { append, prepend, getHead, getSize, getTail, at, pop };
 }
