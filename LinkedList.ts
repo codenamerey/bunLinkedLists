@@ -3,6 +3,10 @@ import { Node } from "./Node";
 export const LinkedList = function() {
     const HEAD = Node(null, null);
 
+    const getHead = () => {
+        return HEAD;
+    }
+
     const append = (value: string) => {
 
         let currentNode: Node = HEAD;
@@ -14,6 +18,6 @@ export const LinkedList = function() {
         currentNode.next = Node(value, null); 
     }
 
-    return { append }
+    return { append, getHead }
 
 }
