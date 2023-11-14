@@ -71,8 +71,28 @@ export const LinkedList = function() {
             currentNode = currentNode.next!
         } while (currentNode.next != null);
 
+        if(currentNode.value == value) {
+            return true
+        }
+
         return false;
     }
 
-    return { append, prepend, getHead, getSize, getTail, at, pop, contains };
+    const find = (value: string) => {
+        let index = 0;
+        let currentNode = head;
+        do {
+            if(currentNode.value == value) {
+                return index
+            }
+            currentNode = currentNode.next!
+            index++;
+        } while (currentNode.next != null);
+
+        if(currentNode.value == value) {
+            return index
+        }
+    }
+
+    return { append, prepend, getHead, getSize, getTail, at, pop, contains, find };
 }
