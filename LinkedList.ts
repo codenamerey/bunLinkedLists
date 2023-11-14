@@ -44,5 +44,13 @@ export const LinkedList = function() {
         return currentNode;
     }
 
-    return { append, prepend, getHead, getSize, getTail }
+    const at = (index : number) => {
+        let currentNode : Node = head;
+        for(let i = 0; i < index; i++) {
+           currentNode = currentNode.next!;
+        }
+        return currentNode
+    }
+
+    return { append, prepend, getHead, getSize, getTail, at };
 }
