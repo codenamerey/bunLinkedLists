@@ -36,5 +36,13 @@ export const LinkedList = function() {
         return nodesNumber;
     }
 
-    return { append, prepend, getHead, getSize }
+    const getTail = () => {
+        let currentNode = head;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        return currentNode;
+    }
+
+    return { append, prepend, getHead, getSize, getTail }
 }
